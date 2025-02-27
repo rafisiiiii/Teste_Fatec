@@ -20,10 +20,16 @@ public class ExercicioController {
     public String verificaIdade(@PathVariable Optional<String> idade){
         idade.ifPresent(value -> System.out.println("Idade: " + value));
         int idadeInt = Integer.parseInt(idade.get());
-            if (idadeInt >= 18) {
-                return "Idade é 18 ou mais";
-            } else {
-                return "Idade é menor que 18";
+            if (idadeInt > 0 && idadeInt < 12) {
+                return "Criança";
+            } else if (idadeInt >= 12 && idadeInt <= 18) {
+                return "Adolescente";
+            }else if (idadeInt >= 19 && idadeInt <= 60){
+                return "Adulto"
+            }else if (idadeInt > 60){
+                return "Idoso"
+            }else{
+                return "Idade inváida"
             }
     }
 }   
