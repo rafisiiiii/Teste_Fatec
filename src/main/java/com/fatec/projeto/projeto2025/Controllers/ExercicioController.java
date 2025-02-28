@@ -25,11 +25,11 @@ public class ExercicioController {
             } else if (idadeInt >= 12 && idadeInt <= 18) {
                 return "Adolescente";
             }else if (idadeInt >= 19 && idadeInt <= 60){
-                return "Adulto"
+                return "Adulto";
             }else if (idadeInt > 60){
-                return "Idoso"
+                return "Idoso";
             }else{
-                return "Idade inváida"
+                return "Idade inváida";
             }
     }
 }   
