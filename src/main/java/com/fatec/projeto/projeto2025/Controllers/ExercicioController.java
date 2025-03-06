@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ExercicioController {
     
+    // Usuário informa a idade e o programa faz a verificação, informando se é criança, adolescente, adulto ou idoso.
     @GetMapping("get-idade")
     public String verificaIdade(){
         return "Informe a idade: ";
@@ -31,6 +32,7 @@ public class ExercicioController {
             }
     } 
 
+    // Usuário informa um número e o programa verifica se é um número válido, se sim, verifica se é impar ou par
     @GetMapping("")
     public String verificaParImpar(){
         return "Informe um número para verificar se é ímpar ou par: ";
@@ -54,6 +56,7 @@ public class ExercicioController {
         }
     }
 
+    // Usuário informa o peso e a altura e o programa calcula o IMC, informando em qual situação se enquadra
     @GetMapping("/calc-imc/{peso}/{altura}")
         public String CalcIMC(@PathVariable String peso, @PathVariable String altura){
             try{
