@@ -1,4 +1,4 @@
-package com.fatec.projeto.projeto2025.Controllers;
+package com.fatec.projeto.projeto2025.controllers;
 
 import java.util.Optional;
 
