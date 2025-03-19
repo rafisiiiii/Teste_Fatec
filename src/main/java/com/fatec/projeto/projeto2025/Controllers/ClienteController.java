@@ -1,4 +1,4 @@
-package com.fatec.projeto.projeto2025.controllers;
+package com.fatec.projeto.projeto2025.Controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +30,7 @@ public class ClienteController {
 
     //http://localhost:8080/api/cliente/criarCliente => POST
     //http://localhost:9090/api/cliente/deletarCliente => DELETE
-    // http://localhost:9090/api/cliente/atualizarCliente => UPDATE
+    //http://localhost:9090/api/cliente/atualizarCliente => UPDATE
 
     @PostMapping("/criarCliente")
     public String CriarCliente(@RequestBody Cliente cliente) {
