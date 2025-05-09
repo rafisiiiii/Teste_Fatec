@@ -1,57 +1,92 @@
 package com.fatec.projeto.projeto2025.entities;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
+ 
+import jakarta.persistence.*;
+ 
 @Entity
-@Table(name = "clientes")
-public class Cliente {
+
+@Table(name = "usuarios")
+
+public class Usuario {
+ 
     @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+ 
+    @Column(nullable = false)
 
-    @Column(name = "nomeCliente", nullable = false, length = 60)
     private String nome;
+ 
+    @Column(nullable = false, unique = true)
 
-    @Column()
     private String email;
+ 
+    @Column(nullable = false)
 
-    // Construtores
-    public Cliente() {}
+    private String senha;
+ 
+    public Usuario() {
 
-    public Cliente(Long id, String nome, String email) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
     }
+ 
+    public Usuario(String nome, String email, String senha) {
 
-    // Getters e Setters
+        this.nome = nome;
+
+        this.email = email;
+
+        this.senha = senha;
+
+    }
+ 
     public Long getId() {
+
         return id;
-    }
 
+    }
+ 
     public void setId(Long id) {
+
         this.id = id;
-    }
 
+    }
+ 
     public String getNome() {
+
         return nome;
-    }
 
+    }
+ 
     public void setNome(String nome) {
+
         this.nome = nome;
-    }
 
+    }
+ 
     public String getEmail() {
+
         return email;
-    }
 
+    }
+ 
     public void setEmail(String email) {
-        this.email = email;
-    }
-}
 
+        this.email = email;
+
+    }
+ 
+    public String getSenha() {
+
+        return senha;
+
+    }
+ 
+    public void setSenha(String senha) {
+
+        this.senha = senha;
+
+    }
+
+}
+ 

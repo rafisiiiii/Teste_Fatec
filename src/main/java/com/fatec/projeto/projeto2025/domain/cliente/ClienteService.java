@@ -25,17 +25,19 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
-    public boolean atualizarCliente(Long id, Cliente clienteAtualizado) {
+    public boolean atualizarCliente(Long id, Cliente cliente) {
         Optional<Cliente> clienteOptional = buscarClientePorId(id);
         if (clienteOptional.isPresent()) {
-            Cliente cliente = clienteOptional.get();
-            cliente.setNome(clienteAtualizado.getNome());
-            cliente.setIdade(clienteAtualizado.getIdade());
-            clienteRepository.save(cliente);
+            Cliente clienteExistente = clienteOptional.get();
+            clienteExistente.setNome(cliente.getNome());
+            clienteExistente.setEmail(cliente.getEmail());
+            clienteRepository.save(clienteExistente);
             return true;
         }
+        
         return false;
     }
+    
 
     public boolean deletarCliente(Long id) {
         if (clienteRepository.existsById(id)) {
